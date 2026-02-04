@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Podcast SRI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/podcast.png">
+</head>
+<body>
+    <div class="radio-container">
+        <!-- Header -->
+        <div class="radio-header">
+            <div class="radio-logo">
+                <i class="fas fa-podcast"></i>RADIO PODCAST SRI&nbsp;
+            </div>
+            <div class="radio-subtitle">Escucha los últimos podcasts de bienestar de Talento Humano</div>
+        </div>
+
+        <!-- Reproductor Principal -->
+        <div class="main-player" id="mainPlayer">
+            <div class="player-info">
+                <img alt="Cover" class="player-cover" id="playerCover" 
+                     src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80">
+                <div class="player-details">
+                    <div class="player-category" id="playerCategory">PODCAST</div>
+                    <h1 class="player-title" id="playerTitle">Selecciona un podcast</h1>
+                    <div class="player-author" id="playerAuthor">Autor</div>
+                    <p class="player-description" id="playerDescription">
+                        Haz clic en cualquier podcast de la lista para comenzar a escuchar. 
+                        Todos los audios están disponibles para tu formación y entretenimiento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <div class="progress-container" onclick="seekAudio(event)">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="control-buttons">
+                    <button class="control-btn" onclick="previousTrack()" title="Anterior">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    
+                    <button class="control-btn play-btn" id="playBtn" onclick="togglePlay()" title="Reproducir/Pausar">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    
+                    <button class="control-btn" onclick="nextTrack()" title="Siguiente">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+
+                    <div class="volume-container">
+                        <button class="control-btn" id="muteBtn" onclick="toggleMute()" title="Silenciar">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input class="volume-slider" id="volumeSlider" max="100" min="0" 
+                               oninput="changeVolume(this.value)" title="Volumen" type="range" value="80">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de Podcasts -->
+        <div class="podcasts-section">
+            <div class="section-header">
+                <h2 class="section-title">Todos los Podcasts Disponibles</h2>
+                <div class="category-filters">
+                    <button class="category-btn active" onclick="filterPodcasts('todos')">Todos</button>
+                    <button class="category-btn" onclick="filterPodcasts('comunicacion')">Comunicación</button>
+                    <button class="category-btn" onclick="filterPodcasts('capacitacion')">Capacitación</button>
+                    <button class="category-btn" onclick="filterPodcasts('noticias')">Noticias</button>
+                    <button class="category-btn" onclick="filterPodcasts('entretenimiento')">Entretenimiento</button>
+                </div>
+            </div>
+
+            <div class="podcasts-grid" id="podcastsGrid">
+                <!-- Los podcasts se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="radio-footer">
+            <p>© 2024 Radio Institucional - Todos los derechos reservados</p>
+            <p>Actualizado: <span id="lastUpdate"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
