@@ -6,7 +6,7 @@ const podcastsDatabase = [
         author: "Tu Nombre",
         description: "Reemplaza este texto con la descripción de tu podcast. Sube tu archivo MP3 y personaliza toda la información.",
         category: "entretenimiento",
-        audioUrl: "mi-podcast.mp3", // CAMBIA POR EL NOMBRE DE TU ARCHIVO
+        audioUrl: "podcast-sri.mp3", // CAMBIA POR EL NOMBRE DE TU ARCHIVO
         imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
         duration: "3:45",
         date: "15 Ene 2024",
